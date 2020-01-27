@@ -1,0 +1,29 @@
+language: go
+go:
+- '1.13'
+jobs:
+  include:
+# CREATING THE TILE
+  - stage: creating Tile
+    os: linux
+    script:
+    - curl -O https://github.com/cf-platform-eng/tile-generator/releases/download/v14.0.3/pcf_linux-64bit
+    - chmod +x pcf_linux-64bit
+    - mv pcf_linux-64bit /usr/local/bin/tile
+    - sudo pip install tile-generator
+    - dep init
+    - dep ensure
+    - export GOOS=linux
+    - export GOARCH=amd64
+    - go build -o dist/nr-nozzle
+    - tile build
+    deploy:
+      provider: releases
+      file_glob: true
+      api_key:
+        secure: d+2f8ycKVPKUy1xqfoR+LG+CxrTJEtS6PuKxbUaxdQkXdR8j6VApgu4uwudoKfflr0aHI8AnYXO+gSSPMQay07NSyw0it+bSgZBdDkdGrCHlTvh1hWbh6RKHJr6MPHgkpg8CXkvvzTnN8TPzk7c6j19W6eptAHJneRcskzmP2qZBC6rqHs15F60dr22yq1HLBJZawv05HOBjllK9Q1BPFZHqhM/Y0wOFKnE5wZHMLaACu+IVpE//38rr4m4/nVAZ3Pp/ytz6yI4OBOuVR7+kLPaLFGqDjLRDL+nQ6kQCp+2dNJXycWpPP8M5EtzpMlTLVveLqWqGJCyUmjN05C5pKCZQ7M4X41xyX9bcTPibR1V9pTD+i0zmDCfGzWx+47vds8XOAd+B0zMpc2IX7hhbYQ8cqBQeaV+XjzRe62SKxUDRbFMZaw5jbystg/Kck2m8aH7AiHQu7NBMAYZwqj4kgzJRTS1U+7wgTOIVJ8Pen5WeALhIUprWsjhw9Rhe78olJKaydcYiKEK7LWTe1dKCEpamqIN+hUL+P9MRXwVGGMF71TV7t7kIAjY6KEZqpzG/TiCh0y9A/BZMOPSZHGgRMFHZGtVr+KIqO0jX19QRh92e5uT5IgJ5MvwJQAGnc+Pt8EkoRcrelMURW8FKWb2Ho/7eOFEq2WflMmVc1aoyF2A=
+      file:
+      - "./product/nr-firehose-nozzle-0.0.1.pivotal"
+      skip_cleanup: true
+      on:
+        tags: true
