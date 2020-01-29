@@ -163,6 +163,40 @@
   version = "v1.0.3"
 
 [[projects]]
+  digest = "1:2ac9a3a237ef55828e59b7b3fd34b66c488ff7d600edd0d79aa4f51a7e32b713"
+  name = "github.com/newrelic/newrelic-pcf-nozzle-tile"
+  packages = [
+    "accumulators/capacity",
+    "accumulators/container",
+    "accumulators/counter",
+    "accumulators/http",
+    "accumulators/logmessage",
+    "accumulators/value",
+    "app",
+    "cfclient/api",
+    "cfclient/cfapps",
+    "config",
+    "firehose",
+    "firehose/httpfirehose",
+    "logger",
+    "newrelic",
+    "newrelic/accumulators",
+    "newrelic/attributes",
+    "newrelic/entities",
+    "newrelic/healthcheck",
+    "newrelic/insights",
+    "newrelic/metrics",
+    "newrelic/metrics/samples",
+    "newrelic/nrevents",
+    "newrelic/nrpcf",
+    "newrelic/registry",
+    "newrelic/uid",
+  ]
+  pruneopts = "UT"
+  revision = "cff27cc236597572226701a7a7817d87f963aa67"
+  version = "v2.5.0"
+
+[[projects]]
   digest = "1:89a071f4773bd23b5f03a31653b05dfe8cb708254aeb34d4cdb9651a4ddcbd6d"
   name = "github.com/onsi/ginkgo"
   packages = [
@@ -484,6 +518,31 @@
     "github.com/cloudfoundry/go-loggregator",
     "github.com/fatih/camelcase",
     "github.com/newrelic/go-insights/client",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/accumulators/capacity",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/accumulators/container",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/accumulators/counter",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/accumulators/http",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/accumulators/logmessage",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/accumulators/value",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/app",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/cfclient/api",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/cfclient/cfapps",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/config",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/firehose",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/firehose/httpfirehose",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/logger",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/accumulators",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/attributes",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/entities",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/healthcheck",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/insights",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/metrics",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/metrics/samples",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/nrevents",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/nrpcf",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/registry",
+    "github.com/newrelic/newrelic-pcf-nozzle-tile/newrelic/uid",
     "github.com/onsi/ginkgo",
     "github.com/onsi/gomega",
     "github.com/sirupsen/logrus",
